@@ -17,8 +17,12 @@ def translate(w):
             return "We didn't understand your entry."
     else:
         return "The word doesn't exist. Please double check it."
-
-
+classmethod
 word = input("Enter word: ")
+output = translate(word)
 
-print(translate(word))
+if type(output) == list:
+    for item in output:
+        print(">> " + item)
+else:
+    print(output)
